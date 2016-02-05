@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-language" content="zh-CN">
+  
+  <title>test-of-latex【机器学习week1-2】 | GCUSKY_SPACE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="单变量线性回归(Linear Regression with One Variable)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="test-of-latex【机器学习week1-2】">
+<meta property="og:url" content="http://www.gcusky.com/2016/02/05/test-of-latex/index.html">
+<meta property="og:site_name" content="GCUSKY_SPACE">
+<meta property="og:description" content="单变量线性回归(Linear Regression with One Variable)">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_9.png?imageView/2/w/450">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_10.png?imageView/2/w/450">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_11.png?imageView/2/w/500">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_12.png?imageView/2/w/700">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_13.png?imageView/2/w/700">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_15.png">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_14.png?imageView/2/w/600">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_16.png?imageView/2/w/600">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_17.png?imageView/2/w/600">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_18.png">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_19.png">
+<meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_20.png">
+<meta property="og:updated_time" content="2016-02-05T03:56:46.592Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="test-of-latex【机器学习week1-2】">
+<meta name="twitter:description" content="单变量线性回归(Linear Regression with One Variable)">
+  
+    <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+  
+  <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">GCUSKY</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">GCUSKY的空间</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:gcusky@foxmail.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a></li>
+                            
+                                <li id="V2EX"><a class="V2EX" target="_blank" href="http://v2ex.com/member/ltrans" title="V2EX"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">GCUSKY</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">GCUSKY</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">GCUSKY的空间</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:gcusky@foxmail.com" title="Email"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/gcusky" title="GitHub"></a></li>
+                            
+                                <li id="V2EX"><a class="V2EX" target="_blank" href="http://v2ex.com/member/ltrans" title="V2EX"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-test-of-latex" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/05/test-of-latex/" class="article-date">
+      <time datetime="2016-02-05T03:53:06.000Z" itemprop="datePublished">2016-02-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      test-of-latex【机器学习week1-2】
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/test/">test</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machinelearning/">machinelearning</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+          
+        <h1 id="u5355_u53D8_u91CF_u7EBF_u6027_u56DE_u5F52_28Linear_Regression_with_One_Variable_29"><a href="#u5355_u53D8_u91CF_u7EBF_u6027_u56DE_u5F52_28Linear_Regression_with_One_Variable_29" class="headerlink" title="单变量线性回归(Linear Regression with One Variable)"></a>单变量线性回归(Linear Regression with One Variable)</h1><a id="more"></a>
+<h2 id="1-_u6A21_u578B_u8868_u8FBE_uFF08Model_Representation_uFF09"><a href="#1-_u6A21_u578B_u8868_u8FBE_uFF08Model_Representation_uFF09" class="headerlink" title="1.模型表达（Model Representation）"></a>1.模型表达（Model Representation）</h2><blockquote>
+<p>以之前的房屋交易问题为例，假使我们回归问题的训练集（Training Set）如下表所示：<br>$Size$ $in$ $feet^2(x)$ | $Price(\$)$ $in$ $1000’s(y)$<br>:—-:|:—-:<br>2104 | 460<br>1416 | 232<br>1534 | 315<br>852 | 178<br>… | …<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;"<span class="attribute">statuses</span>": <span class="value">[ &#123;</span><br><span class="line">            "<span class="attribute">created_at</span>": <span class="value"><span class="string">"Tue May 31 17:46:55 +0800 2011"</span></span>,</span><br><span class="line">            "<span class="attribute">id</span>": <span class="value"><span class="number">11488058246</span></span>,</span><br><span class="line">            "<span class="attribute">text</span>": <span class="value"><span class="string">"求关注。"</span>，</span><br><span class="line">            <span class="string">"source"</span>: <span class="string">"&lt;a href="</span>http://weibo.com<span class="string">" rel="</span>nofollow<span class="string">"&gt;新浪微博&lt;/a&gt;"</span></span>,</span><br><span class="line">            "<span class="attribute">favorited</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">            "<span class="attribute">truncated</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">            "<span class="attribute">in_reply_to_status_id</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">            "<span class="attribute">in_reply_to_user_id</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">            "<span class="attribute">in_reply_to_screen_name</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">            "<span class="attribute">geo</span>": <span class="value">&#123;</span><br><span class="line">                "<span class="attribute">type</span>": <span class="value"><span class="string">"point"</span></span>,</span><br><span class="line">                "<span class="attribute">coordinates</span>": <span class="value">[<span class="number">0.0</span>, <span class="number">0.0</span>]</span><br><span class="line">            </span>&#125;</span>,</span><br><span class="line">            "<span class="attribute">mid</span>": <span class="value"><span class="string">"5612814510546515491"</span></span>,</span><br><span class="line">            "<span class="attribute">reposts_count</span>": <span class="value"><span class="number">8</span></span>,</span><br><span class="line">            "<span class="attribute">comments_count</span>": <span class="value"><span class="number">9</span></span>,</span><br><span class="line">            "<span class="attribute">annotations</span>": <span class="value">[</span><br><span class="line">                &#123;</span><br><span class="line">                    "<span class="attribute">place</span>": <span class="value">&#123;</span><br><span class="line">                        "<span class="attribute">poiid</span>": <span class="value"><span class="string">"123456"</span></span>,</span><br><span class="line">                        "<span class="attribute">title</span>": <span class="value"><span class="string">"Wall Street"</span></span>,</span><br><span class="line">                        "<span class="attribute">type</span>": <span class="value"><span class="string">"checkin"</span></span>,</span><br><span class="line">                        "<span class="attribute">source</span>": <span class="value"><span class="string">"微领地"</span></span><br><span class="line">                    </span>&#125;</span><br><span class="line">                </span>&#125;</span><br><span class="line">            ]</span>,</span><br><span class="line">            "<span class="attribute">user</span>": <span class="value">&#123;</span><br><span class="line">                "<span class="attribute">id</span>": <span class="value"><span class="number">1404376560</span></span>,</span><br><span class="line">                "<span class="attribute">screen_name</span>": <span class="value"><span class="string">"zaku"</span></span>,</span><br><span class="line">                "<span class="attribute">name</span>": <span class="value"><span class="string">"zaku"</span></span>,</span><br><span class="line">                "<span class="attribute">province</span>": <span class="value"><span class="string">"11"</span></span>,</span><br><span class="line">                "<span class="attribute">city</span>": <span class="value"><span class="string">"5"</span></span>,</span><br><span class="line">                "<span class="attribute">location</span>": <span class="value"><span class="string">"北京 朝阳区"</span></span>,</span><br><span class="line">                "<span class="attribute">description</span>": <span class="value"><span class="string">"人生五十年，乃如梦如幻；有生斯有死，壮士复何憾。"</span></span>,</span><br><span class="line">                "<span class="attribute">url</span>": <span class="value"><span class="string">"http://blog.sina.com.cn/zaku"</span></span>,</span><br><span class="line">                "<span class="attribute">profile_image_url</span>": <span class="value"><span class="string">"http://tp1.sinaimg.cn/1404376560/50/0/1"</span></span>,</span><br><span class="line">                "<span class="attribute">domain</span>": <span class="value"><span class="string">"zaku"</span></span>,</span><br><span class="line">                "<span class="attribute">gender</span>": <span class="value"><span class="string">"m"</span></span>,</span><br><span class="line">                "<span class="attribute">followers_count</span>": <span class="value"><span class="number">1204</span></span>,</span><br><span class="line">                "<span class="attribute">friends_count</span>": <span class="value"><span class="number">447</span></span>,</span><br><span class="line">                "<span class="attribute">statuses_count</span>": <span class="value"><span class="number">2908</span></span>,</span><br><span class="line">                "<span class="attribute">favourites_count</span>": <span class="value"><span class="number">0</span></span>,</span><br><span class="line">                "<span class="attribute">created_at</span>": <span class="value"><span class="string">"Fri Aug 28 00:00:00 +0800 2009"</span></span>,</span><br><span class="line">                "<span class="attribute">following</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">                "<span class="attribute">allow_all_act_msg</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">                "<span class="attribute">remark</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">                "<span class="attribute">geo_enabled</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">                "<span class="attribute">verified</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">                "<span class="attribute">allow_all_comment</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">                "<span class="attribute">avatar_large</span>": <span class="value"><span class="string">"http://tp1.sinaimg.cn/1404376560/180/0/1"</span></span>,</span><br><span class="line">                "<span class="attribute">verified_reason</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">                "<span class="attribute">follow_me</span>": <span class="value"><span class="literal">false</span></span>,</span><br><span class="line">                "<span class="attribute">online_status</span>": <span class="value"><span class="number">0</span></span>,</span><br><span class="line">                "<span class="attribute">bi_followers_count</span>": <span class="value"><span class="number">215</span></span><br><span class="line">            </span>&#125;</span><br><span class="line">        </span>&#125;,</span><br><span class="line">        ...</span><br><span class="line">    ]</span>,</span><br><span class="line">    "<span class="attribute">total_number</span>": <span class="value"><span class="number">5</span></span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们将要用来描述这个回归问题的标记如下:</p>
+<ul>
+<li>$m$ 代表训练集中实例的数量</li>
+<li>$x$ 代表特征/输入变量</li>
+<li>$y$ 代表目标变量/输出变量</li>
+<li>$(x,y)$ 代表训练集中的实例</li>
+<li>$(x^{(i)},y^{(i)})$ 代表第 i 个观察实例</li>
+<li>$h$ 代表学习算法的解决方案或函数也称为假设（hypothesis）</li>
+</ul>
+</blockquote>
+<p><img src="http://cloud.gcusky.com/MLMOOC/ML1_9.png?imageView/2/w/450" alt=""></p>
+<p>　　因而，要解决房价预测问题，我们实际上是要将训练集“喂”给我们的学习算法，进而学习得一个假设 $h$，然后将我们要预测的房屋的尺寸作为输入变量输入给 $h$，预测出该房屋的交易价格作为输出变量输出为结果。那么，对于我们的房价预测问题，我们该如何表达 $h$？<br>　　一种可能的表达方式为：$h_θ=θ_0+θ_1x$；因为只含有一个特征/输入变量，因此这样的问题叫作<strong>单变量线性回归问题</strong>。</p>
+<h2 id="2-_u4EE3_u4EF7_u51FD_u6570_uFF08Cost_Function_uFF09"><a href="#2-_u4EE3_u4EF7_u51FD_u6570_uFF08Cost_Function_uFF09" class="headerlink" title="2.代价函数（Cost Function）"></a>2.代价函数（Cost Function）</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">Hypothesis:</th>
+<th style="text-align:center">$h_θ=θ_0+θ_1x$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Parameters:</td>
+<td style="text-align:center">$θ_0$, $θ_0$</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Cost Function:</strong></td>
+<td style="text-align:center">$$J(θ_0,θ<em>1)=\frac{1}{2m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})^2$$</td>
+</tr>
+<tr>
+<td style="text-align:center">Goal:</td>
+<td style="text-align:center">$\mathop{minimize} \limits_{θ_0,θ_1}J(θ_0,θ_1)$</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://cloud.gcusky.com/MLMOOC/ML1_10.png?imageView/2/w/450" alt=""><br>　　我们现在要做的便是为我们的模型选择合适的参数（parameters）$θ_0$和 $θ_1$，在房价问题这个例子中便是直线的斜率和在 $y$ 轴上的截距。<br>　　我们选择的参数决定了我们得到的直线相对于我们的训练集的准确程度，模型所预测的值与训练集中实际值之间的差距就是<strong>建模误差（modeling error）</strong>。<br>　　我们的目标便是选择出可以使得建模误差的平方和能够最小的模型参数。<br>　　即使得代价函数$J(θ_0,θ<em>1)=\frac{1}{2m}\sum^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})^2$最小。接下来我们绘制一个等高线图， $(x,y,z)$ 三个坐标分别为 $θ_0$ 和 $θ_1$和 $J(θ_0,θ_1)$：<br><img src="http://cloud.gcusky.com/MLMOOC/ML1_11.png?imageView/2/w/500" alt=""><br>　　则可以看出在三维空间中存在一个使得 $J(θ_0,θ_1)$ 最小的点。<br><img src="http://cloud.gcusky.com/MLMOOC/ML1_12.png?imageView/2/w/700" alt="其中一种拟合情况"></p>
+<h2 id="3-_u68AF_u5EA6_u4E0B_u964D_uFF08Gradient_Descent_uFF09"><a href="#3-_u68AF_u5EA6_u4E0B_u964D_uFF08Gradient_Descent_uFF09" class="headerlink" title="3.梯度下降（Gradient Descent）"></a>3.梯度下降（Gradient Descent）</h2><h3 id="u57FA_u672C_u601D_u60F3"><a href="#u57FA_u672C_u601D_u60F3" class="headerlink" title="基本思想"></a>基本思想</h3><p>　　开始时我们随机选择一个参数的组合$（θ_0,θ_1,…,θ_n）$，计算代价函数，然后我们寻找下一个能让代价函数值下降最多的参数组合。 我们持续这么做直到到到一个<strong>局部最小值（local minimum）</strong>,因为我们并没有尝试完所有的参数组合，所以不能确定我们得到的局部最小值是否便是<strong>全局最小值（global minimum）</strong>,选择不同的初始参数组合，可能会找到不同的局部最小值（如下图）。<br><img src="http://cloud.gcusky.com/MLMOOC/ML1_13.png?imageView/2/w/700" alt=""><br><img src="http://cloud.gcusky.com/MLMOOC/ML1_15.png" alt=""></p>
+<h2 id="4-_u5BF9_u7EBF_u6027_u56DE_u5F52_u8FD0_u7528_u68AF_u5EA6_u4E0B_u964D_u6CD5"><a href="#4-_u5BF9_u7EBF_u6027_u56DE_u5F52_u8FD0_u7528_u68AF_u5EA6_u4E0B_u964D_u6CD5" class="headerlink" title="4.对线性回归运用梯度下降法"></a>4.对线性回归运用梯度下降法</h2><h3 id="4-1_u68AF_u5EA6_u4E0B_u964D_u7684_u76F4_u89C2_u7406_u89E3"><a href="#4-1_u68AF_u5EA6_u4E0B_u964D_u7684_u76F4_u89C2_u7406_u89E3" class="headerlink" title="4.1梯度下降的直观理解"></a>4.1梯度下降的直观理解</h3><blockquote>
+<p>梯度下降是一个用来求函数最小值的算法，我们将使用梯度下降算法来求出代价函数 $J(θ_0,θ_1)$ 的最小值。</p>
+</blockquote>
+<p>　　梯度下降算法：$θ_j:=θ_j-α\frac{\partial}{\partialθ_j}J(θ_0,θ_1)$<br>　　对 $θ$ 赋值，使得 $J(θ)$ 按梯度下降最快方向进行，一直迭代下去，最终得到局部最小值。其中 $α$ 是<strong>学习率（learning rate）</strong>，它决定了我们沿着能让代价函数下降程度最大的方向向下迈出的步子有多大。<strong>注意：计算时 $θ_0$ 和 $θ_1$ 要同步更新（simultaneous update）。</strong><br><img src="http://cloud.gcusky.com/MLMOOC/ML1_14.png?imageView/2/w/600" alt=""></p>
+<h3 id="4-2_u68AF_u5EA6_u4E0B_u964D_u7684_u7EBF_u6027_u56DE_u5F52"><a href="#4-2_u68AF_u5EA6_u4E0B_u964D_u7684_u7EBF_u6027_u56DE_u5F52" class="headerlink" title="4.2梯度下降的线性回归"></a>4.2梯度下降的线性回归</h3><p>　　梯度下降算法和线性回归算法比较如图：<br><img src="http://cloud.gcusky.com/MLMOOC/ML1_16.png?imageView/2/w/600" alt=""><br>　　对我们之前的线性回归问题运用梯度下降法，关键在于求出代价函数的导数，即：<br>$\frac{\partial}{\partialθ_j}J(θ_0,θ_1)=\frac{\partial}{\partialθ<em>j}\frac{1}{2m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})^2$<br>　　$j=0$ 时：$\frac{\partial}{\partialθ_0}J(θ_0,θ<em>1)=\frac{1}{m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})$<br>　　$j=1$ 时：$\frac{\partial}{\partialθ_1}J(θ_0,θ<em>1)=\frac{1}{m}\sum\limits^m</em>{i=1}(h_θ(x^{(i)})-y^{(i)})·x^{(i)}$<br>　　则算法改写成：<br><img src="http://cloud.gcusky.com/MLMOOC/ML1_17.png?imageView/2/w/600" alt=""></p>
+<p>　　拟合情况：<br><img src="http://cloud.gcusky.com/MLMOOC/ML1_18.png" alt=""><br><img src="http://cloud.gcusky.com/MLMOOC/ML1_19.png" alt=""><br><img src="http://cloud.gcusky.com/MLMOOC/ML1_20.png" alt=""></p>
+<p>　　<br>参考资料<br><a href="http://mooc.guokr.com/note/12/" title="MOOC学院" target="_blank" rel="external">机器学习课笔记 —— Ryan Cheung</a><br><a href="http://mooc.guokr.com/note/16274/" title="MOOC学院" target="_blank" rel="external">机器学习教程个人笔记（V2.5）—— 黄海广</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 GCUSKY 的个人博客">GCUSKY</a></p>
+        <p><span>发布时间:</span>2016年02月05日 - 11时53分</p>
+        <p><span>最后更新:</span>2016年02月05日 - 11时56分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/05/test-of-latex/" title="test-of-latex【机器学习week1-2】">http://www.gcusky.com/2016/02/05/test-of-latex/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/02/05/test-of-latex/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/02/hello-world/">
+                    Hello World
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u5355_u53D8_u91CF_u7EBF_u6027_u56DE_u5F52_28Linear_Regression_with_One_Variable_29"><span class="toc-number">1.</span> <span class="toc-text">单变量线性回归(Linear Regression with One Variable)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-_u6A21_u578B_u8868_u8FBE_uFF08Model_Representation_uFF09"><span class="toc-number">1.1.</span> <span class="toc-text">1.模型表达（Model Representation）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-_u4EE3_u4EF7_u51FD_u6570_uFF08Cost_Function_uFF09"><span class="toc-number">1.2.</span> <span class="toc-text">2.代价函数（Cost Function）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-_u68AF_u5EA6_u4E0B_u964D_uFF08Gradient_Descent_uFF09"><span class="toc-number">1.3.</span> <span class="toc-text">3.梯度下降（Gradient Descent）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u57FA_u672C_u601D_u60F3"><span class="toc-number">1.3.1.</span> <span class="toc-text">基本思想</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-_u5BF9_u7EBF_u6027_u56DE_u5F52_u8FD0_u7528_u68AF_u5EA6_u4E0B_u964D_u6CD5"><span class="toc-number">1.4.</span> <span class="toc-text">4.对线性回归运用梯度下降法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1_u68AF_u5EA6_u4E0B_u964D_u7684_u76F4_u89C2_u7406_u89E3"><span class="toc-number">1.4.1.</span> <span class="toc-text">4.1梯度下降的直观理解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2_u68AF_u5EA6_u4E0B_u964D_u7684_u7EBF_u6027_u56DE_u5F52"><span class="toc-number">1.4.2.</span> <span class="toc-text">4.2梯度下降的线性回归</span></a></li></ol></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/02/05/test-of-latex/" data-title="test-of-latex【机器学习week1-2】" data-url="http://www.gcusky.com/2016/02/05/test-of-latex/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"gcusky"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+
+        <!-- ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js'; -->
+        ds.src = 'http://gcusky.com/js/embed.js';
+
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/02/hello-world/" title="下一篇: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 GCUSKY
+                
+                    <a href="http://www.miibeian.gov.cn/">粤ICP备15063973号-2</a>
+                
+            </div>
+            <div class="footer-right">
+                Theme of <a href="https://github.com/gcusky/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> , Improved by <a href="/">gcusky</a>
+            </div>
+
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span> </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">， 本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 2;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
