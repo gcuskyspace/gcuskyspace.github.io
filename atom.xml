@@ -96,10 +96,13 @@
     <link href="http://www.gcusky.com/2016/03/15/acm-2/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-2/</id>
     <published>2016-03-15T08:29:58.000Z</published>
-    <updated>2016-03-15T10:08:03.157Z</updated>
-    <content type="html"><![CDATA[<p><strong>描述</strong><br>有一个整型偶数$n(2&lt;= n &lt;=10000)$,你要做的是：先把$1$到$n$中的所有奇数从小到大输出，再把所有的偶数从小到大输出。</p>
-<p><strong>输入</strong><br>第一行有一个整数$i(2&lt;=i&lt;30)$表示有$i$组测试数据；<br>每组有一个整型偶数$n$。</p>
-<p><strong>输出</strong><br>第一行输出所有的奇数<br>第二行输出所有的偶数</p>
+    <updated>2016-03-15T10:10:32.724Z</updated>
+    <content type="html"><![CDATA[<p><strong>描述</strong></p>
+<p>有一个整型偶数$n(2&lt;= n &lt;=10000)$,你要做的是：先把$1$到$n$中的所有奇数从小到大输出，再把所有的偶数从小到大输出。</p>
+<p><strong>输入</strong></p>
+<p>第一行有一个整数$i(2&lt;=i&lt;30)$表示有$i$组测试数据；<br>每组有一个整型偶数$n$。</p>
+<p><strong>输出</strong></p>
+<p>第一行输出所有的奇数<br>第二行输出所有的偶数</p>
 <p><strong>样例输入</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">14</span></span><br></pre></td></tr></table></figure>
 <p><strong>样例输出</strong></p>
@@ -118,9 +121,12 @@
 </ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p><strong>描述</strong><br>有一个整型偶数$n(2&lt;= n &lt;=10000)$,你要做的是：先把$1$到$n$中的所有奇数从小到大输出，再把所有的偶数从小到大输出。</p>
-<p><strong>输入</strong><br>第一行有一个整数$i(2&lt;=i&lt;30)$表示有$i$组测试数据；<br>每组有一个整型偶数$n$。</p>
-<p><strong>输出</strong><br>第一行输出所有的奇数<br>第二行输出所有的偶数</p>
+    <![CDATA[<p><strong>描述</strong></p>
+<p>有一个整型偶数$n(2&lt;= n &lt;=10000)$,你要做的是：先把$1$到$n$中的所有奇数从小到大输出，再把所有的偶数从小到大输出。</p>
+<p><strong>输入</strong></p>
+<p>第一行有一个整数$i(2&lt;=i&lt;30)$表示有$i$组测试数据；<br>每组有一个整型偶数$n$。</p>
+<p><strong>输出</strong></p>
+<p>第一行输出所有的奇数<br>第二行输出所有的偶数</p>
 <p><strong>样例输入</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">14</span></span><br></pre></td></tr></table></figure>
 <p><strong>样例输出</strong></p>
