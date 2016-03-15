@@ -6,22 +6,37 @@
   
   <title>C++ 素数求和问题 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="描述现在给你$N$个数$(01234567351 2 3 4 5811 12 13 14 15 16 17 181021 22 23 24 25 26 27 28 29 30
-样例输出123104152
-题目来源http://acm.nyist.net/JudgeOnline/problem.php?pid=22">
+  <meta name="description" content="描述
+现在给你$N$个数$(0&amp;lt;N&amp;lt;1000)$，现在要求你写出一个程序，找出这$N$个数中的所有素数，并求和。
+输入
+第一行给出整数$M(0&amp;lt;M&amp;lt;10)$代表多少组测试数据每组测试数据第一行给你$N$，代表该组测试数据的数量。接下来的$N$个数为要测试的数据，每个数小于$1000$
+输出
+每组测试数据结果占一行，输出给出的测试数据的所有素数和
+样例输入
+123456735">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ 素数求和问题">
 <meta property="og:url" content="http://www.gcusky.com/2016/03/15/acm-3/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="描述现在给你$N$个数$(01234567351 2 3 4 5811 12 13 14 15 16 17 181021 22 23 24 25 26 27 28 29 30
-样例输出123104152
-题目来源http://acm.nyist.net/JudgeOnline/problem.php?pid=22">
-<meta property="og:updated_time" content="2016-03-15T10:00:04.584Z">
+<meta property="og:description" content="描述
+现在给你$N$个数$(0&amp;lt;N&amp;lt;1000)$，现在要求你写出一个程序，找出这$N$个数中的所有素数，并求和。
+输入
+第一行给出整数$M(0&amp;lt;M&amp;lt;10)$代表多少组测试数据每组测试数据第一行给你$N$，代表该组测试数据的数量。接下来的$N$个数为要测试的数据，每个数小于$1000$
+输出
+每组测试数据结果占一行，输出给出的测试数据的所有素数和
+样例输入
+123456735">
+<meta property="og:updated_time" content="2016-03-15T10:08:22.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ 素数求和问题">
-<meta name="twitter:description" content="描述现在给你$N$个数$(01234567351 2 3 4 5811 12 13 14 15 16 17 181021 22 23 24 25 26 27 28 29 30
-样例输出123104152
-题目来源http://acm.nyist.net/JudgeOnline/problem.php?pid=22">
+<meta name="twitter:description" content="描述
+现在给你$N$个数$(0&amp;lt;N&amp;lt;1000)$，现在要求你写出一个程序，找出这$N$个数中的所有素数，并求和。
+输入
+第一行给出整数$M(0&amp;lt;M&amp;lt;10)$代表多少组测试数据每组测试数据第一行给你$N$，代表该组测试数据的数量。接下来的$N$个数为要测试的数据，每个数小于$1000$
+输出
+每组测试数据结果占一行，输出给出的测试数据的所有素数和
+样例输入
+123456735">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -262,9 +277,18 @@
       
           
           
-        <p><strong>描述</strong><br>现在给你$N$个数$(0<n<1000)$，现在要求你写出一个程序，找出这$n$个数中的所有素数，并求和。 **输入**="" 第一行给出整数$m(0<m<10)$代表多少组测试数据="" 每组测试数据第一行给你$n$，代表该组测试数据的数量。="" 接下来的$n$个数为要测试的数据，每个数小于$1000$="" **输出**="" 每组测试数据结果占一行，输出给出的测试数据的所有素数和="" **样例输入**="" <figure="" class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span> <span class="number">16</span> <span class="number">17</span> <span class="number">18</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">21</span> <span class="number">22</span> <span class="number">23</span> <span class="number">24</span> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span> <span class="number">28</span> <span class="number">29</span> <span class="number">30</span></span><br></pre></td></tr></table></n<1000)$，现在要求你写出一个程序，找出这$n$个数中的所有素数，并求和。></p>
-<p><strong>样例输出</strong><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">41</span></span><br><span class="line"><span class="number">52</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>题目来源</strong><br><a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=22" target="_blank" rel="external">http://acm.nyist.net/JudgeOnline/problem.php?pid=22</a></p>
+        <p><strong>描述</strong></p>
+<p>现在给你$N$个数$(0&lt;N&lt;1000)$，现在要求你写出一个程序，找出这$N$个数中的所有素数，并求和。</p>
+<p><strong>输入</strong></p>
+<p>第一行给出整数$M(0&lt;M&lt;10)$代表多少组测试数据<br>每组测试数据第一行给你$N$，代表该组测试数据的数量。<br>接下来的$N$个数为要测试的数据，每个数小于$1000$</p>
+<p><strong>输出</strong></p>
+<p>每组测试数据结果占一行，输出给出的测试数据的所有素数和</p>
+<p><strong>样例输入</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> <span class="number">15</span> <span class="number">16</span> <span class="number">17</span> <span class="number">18</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">21</span> <span class="number">22</span> <span class="number">23</span> <span class="number">24</span> <span class="number">25</span> <span class="number">26</span> <span class="number">27</span> <span class="number">28</span> <span class="number">29</span> <span class="number">30</span></span><br></pre></td></tr></table></figure>
+<p><strong>样例输出</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">41</span></span><br><span class="line"><span class="number">52</span></span><br></pre></td></tr></table></figure>
+<p><strong>题目来源</strong></p>
+<p><a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=22" target="_blank" rel="external">http://acm.nyist.net/JudgeOnline/problem.php?pid=22</a></p>
 <a id="more"></a>
 <h3 id="u65B9_u6CD5_u4E00_uFF1A_u679A_u4E3E_u6CD5"><a href="#u65B9_u6CD5_u4E00_uFF1A_u679A_u4E3E_u6CD5" class="headerlink" title="方法一：枚举法"></a>方法一：枚举法</h3><p>在一般领域，对正整数$n$，如果用$2$到$\sqrt{n}$之间的所有整数去除，均无法整除，则$n$为质数。<br>质数大于等于2 不能被它本身和1以外的数整除.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">3</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> n&gt;<span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">0</span>|| n%<span class="number">3</span>==<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">5</span>; i*i&lt;=n; i+=<span class="number">6</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (n%i==<span class="number">0</span>|| n%(i+<span class="number">2</span>)==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a,b,c,d;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a;</span><br><span class="line">	<span class="keyword">while</span>(a--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;b;d=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span>(b--)&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;c;</span><br><span class="line">			<span class="keyword">if</span>(isPrime(c)) d=d+c;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;d&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -282,7 +306,7 @@
         <p><span>本文标题:</span><a href="/2016/03/15/acm-3/">C++ 素数求和问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 GCUSKY 的个人博客">GCUSKY</a></p>
         <p><span>发布时间:</span>2016年03月15日 - 17时52分</p>
-        <p><span>最后更新:</span>2016年03月15日 - 18时00分</p>
+        <p><span>最后更新:</span>2016年03月15日 - 18时08分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/15/acm-3/" title="C++ 素数求和问题">http://www.gcusky.com/2016/03/15/acm-3/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/03/15/acm-3/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
