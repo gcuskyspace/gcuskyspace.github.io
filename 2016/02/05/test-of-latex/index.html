@@ -6,12 +6,12 @@
   
   <title>test-of-latex【机器学习week1-2】 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单变量线性回归(Linear Regression with One Variable)">
+  <meta name="description" content="单变量线性回归(Linear Regression with One Variable)本文为机器学习部分笔记，含大量公式，用于Latex测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="test-of-latex【机器学习week1-2】">
 <meta property="og:url" content="http://www.gcusky.com/2016/02/05/test-of-latex/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="单变量线性回归(Linear Regression with One Variable)">
+<meta property="og:description" content="单变量线性回归(Linear Regression with One Variable)本文为机器学习部分笔记，含大量公式，用于Latex测试">
 <meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_9.png?imageView/2/w/450">
 <meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_10.png?imageView/2/w/450">
 <meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_11.png?imageView/2/w/500">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_18.png">
 <meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_19.png">
 <meta property="og:image" content="http://cloud.gcusky.com/MLMOOC/ML1_20.png">
-<meta property="og:updated_time" content="2016-02-05T04:10:05.483Z">
+<meta property="og:updated_time" content="2016-03-14T02:25:48.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="test-of-latex【机器学习week1-2】">
-<meta name="twitter:description" content="单变量线性回归(Linear Regression with One Variable)">
+<meta name="twitter:description" content="单变量线性回归(Linear Regression with One Variable)本文为机器学习部分笔记，含大量公式，用于Latex测试">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -151,7 +151,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a>
+                        <a href="/tags/ACM/" style="font-size: 10px;">ACM</a> <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a>
                     </div>
                 </section>
                 
@@ -268,35 +268,35 @@
       
           
           
-        <h1 id="u5355_u53D8_u91CF_u7EBF_u6027_u56DE_u5F52_28Linear_Regression_with_One_Variable_29"><a href="#u5355_u53D8_u91CF_u7EBF_u6027_u56DE_u5F52_28Linear_Regression_with_One_Variable_29" class="headerlink" title="单变量线性回归(Linear Regression with One Variable)"></a>单变量线性回归(Linear Regression with One Variable)</h1><a id="more"></a>
+        <h1 id="u5355_u53D8_u91CF_u7EBF_u6027_u56DE_u5F52_28Linear_Regression_with_One_Variable_29"><a href="#u5355_u53D8_u91CF_u7EBF_u6027_u56DE_u5F52_28Linear_Regression_with_One_Variable_29" class="headerlink" title="单变量线性回归(Linear Regression with One Variable)"></a>单变量线性回归(Linear Regression with One Variable)</h1><p><code>本文为机器学习部分笔记，含大量公式，用于Latex测试</code><br><a id="more"></a></p>
 <h2 id="u6A21_u578B_u8868_u8FBE_uFF08Model_Representation_uFF09"><a href="#u6A21_u578B_u8868_u8FBE_uFF08Model_Representation_uFF09" class="headerlink" title="模型表达（Model Representation）"></a>模型表达（Model Representation）</h2><p>以之前的房屋交易问题为例，假使我们回归问题的训练集（Training Set）如下表所示：</p>
 <table>
 <thead>
 <tr>
-<th>$Size$ $in$ $feet^2(x)$</th>
-<th>$Price(\$)$ $in$ $1000’s(y)$</th>
+<th style="text-align:center">$Size$ $in$ $feet^2(x)$</th>
+<th style="text-align:center">$Price(\$)$ $in$ $1000’s(y)$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>2104</td>
-<td>460</td>
+<td style="text-align:center">2104</td>
+<td style="text-align:center">460</td>
 </tr>
 <tr>
-<td>1416</td>
-<td>232</td>
+<td style="text-align:center">1416</td>
+<td style="text-align:center">232</td>
 </tr>
 <tr>
-<td>1534</td>
-<td>315</td>
+<td style="text-align:center">1534</td>
+<td style="text-align:center">315</td>
 </tr>
 <tr>
-<td>852</td>
-<td>178</td>
+<td style="text-align:center">852</td>
+<td style="text-align:center">178</td>
 </tr>
 <tr>
-<td>…</td>
-<td>…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
 </tr>
 </tbody>
 </table>
@@ -367,7 +367,7 @@
         <p><span>本文标题:</span><a href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 GCUSKY 的个人博客">GCUSKY</a></p>
         <p><span>发布时间:</span>2016年02月05日 - 11时53分</p>
-        <p><span>最后更新:</span>2016年02月05日 - 12时10分</p>
+        <p><span>最后更新:</span>2016年03月14日 - 10时25分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/05/test-of-latex/" title="test-of-latex【机器学习week1-2】">http://www.gcusky.com/2016/02/05/test-of-latex/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/02/05/test-of-latex/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -382,6 +382,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/15/acm-1/">
+                    C++ ASCII码排序
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -488,7 +494,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/03/15/acm-1/" title="上一篇: C++ ASCII码排序">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -500,7 +508,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-1/">C++ ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
