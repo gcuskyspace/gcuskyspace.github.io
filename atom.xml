@@ -68,10 +68,10 @@
     <link href="http://www.gcusky.com/2016/03/15/acm-4/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-4/</id>
     <published>2016-03-15T08:38:03.000Z</published>
-    <updated>2016-03-15T10:13:32.693Z</updated>
+    <updated>2016-03-15T10:18:49.772Z</updated>
     <content type="html"><![CDATA[<p><strong>描述</strong></p>
-<pre><code>在$n*n$方陈里填入$1,2,...,n*n$,要求填成蛇形。例如$n=4$时方阵为：
-</code></pre><p>$$<br>\begin{matrix}<br>10 &amp; 11 &amp; 12 &amp; 1 \\<br>9 &amp; 16 &amp; 13 &amp; 2 \\<br>8 &amp; 15 &amp; 14 &amp; 3 \\<br>7 &amp; 6 &amp; 5 &amp; 4 \\<br>\end{matrix}<br>$$</p>
+<p>在$n_n$方陈里填入$1,2,…,n_n$,要求填成蛇形。例如$n=4$时方阵为：</p>
+<p>$$<br>\begin{matrix}<br>10 &amp; 11 &amp; 12 &amp; 1 \\<br>9 &amp; 16 &amp; 13 &amp; 2 \\<br>8 &amp; 15 &amp; 14 &amp; 3 \\<br>7 &amp; 6 &amp; 5 &amp; 4 \\<br>\end{matrix}<br>$$</p>
 <p><strong>输入</strong></p>
 <p>直接输入方阵的维数，即n的值。(n&lt;=100)</p>
 <p><strong>输出</strong></p>
@@ -88,8 +88,8 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p><strong>描述</strong></p>
-<pre><code>在$n*n$方陈里填入$1,2,...,n*n$,要求填成蛇形。例如$n=4$时方阵为：
-</code></pre><p>$$<br>\begin{matrix}<br>10 &amp; 11 &amp; 12 &amp; 1 \\<br>9 &amp; 16 &amp; 13 &amp; 2 \\<br>8 &amp; 15 &amp; 14 &amp; 3 \\<br>7 &amp; 6 &amp; 5 &amp; 4 \\<br>\end{matrix}<br>$$</p>
+<p>在$n_n$方陈里填入$1,2,…,n_n$,要求填成蛇形。例如$n=4$时方阵为：</p>
+<p>$$<br>\begin{matrix}<br>10 &amp; 11 &amp; 12 &amp; 1 \\<br>9 &amp; 16 &amp; 13 &amp; 2 \\<br>8 &amp; 15 &amp; 14 &amp; 3 \\<br>7 &amp; 6 &amp; 5 &amp; 4 \\<br>\end{matrix}<br>$$</p>
 <p><strong>输入</strong></p>
 <p>直接输入方阵的维数，即n的值。(n&lt;=100)</p>
 <p><strong>输出</strong></p>
