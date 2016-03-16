@@ -4,18 +4,27 @@
   <meta charset="utf-8">
   <meta http-equiv="content-language" content="zh-CN">
   
-  <title>acm | GCUSKY_SPACE</title>
+  <title>【C++】 背包问题 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="云山自清，青水自流。">
+  <meta name="description" content="描述
+现在有很多物品（它们是可以分割的），我们知道它们每个物品的单位重量的价值$v$和重量$w(1&amp;lt;=v,w&amp;lt;=10)$；如果给你一个背包它能容纳的重量为$m(10&amp;lt;=m&amp;lt;=20)$,你所要做的就是把物品装到背包里，使背包里的物品的价值总和最大。
+输入
+第一行输入一个正整数$n(1&amp;lt;=n&amp;lt;=5)$,表示有n组测试数据；随后有$n$测试数据，每组测试数据的第一行有">
 <meta property="og:type" content="article">
-<meta property="og:title" content="acm">
+<meta property="og:title" content="【C++】 背包问题">
 <meta property="og:url" content="http://www.gcusky.com/2016/03/16/acm-8/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="云山自清，青水自流。">
-<meta property="og:updated_time" content="2016-03-16T08:14:40.751Z">
+<meta property="og:description" content="描述
+现在有很多物品（它们是可以分割的），我们知道它们每个物品的单位重量的价值$v$和重量$w(1&amp;lt;=v,w&amp;lt;=10)$；如果给你一个背包它能容纳的重量为$m(10&amp;lt;=m&amp;lt;=20)$,你所要做的就是把物品装到背包里，使背包里的物品的价值总和最大。
+输入
+第一行输入一个正整数$n(1&amp;lt;=n&amp;lt;=5)$,表示有n组测试数据；随后有$n$测试数据，每组测试数据的第一行有">
+<meta property="og:updated_time" content="2016-03-16T08:37:28.415Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="acm">
-<meta name="twitter:description" content="云山自清，青水自流。">
+<meta name="twitter:title" content="【C++】 背包问题">
+<meta name="twitter:description" content="描述
+现在有很多物品（它们是可以分割的），我们知道它们每个物品的单位重量的价值$v$和重量$w(1&amp;lt;=v,w&amp;lt;=10)$；如果给你一个背包它能容纳的重量为$m(10&amp;lt;=m&amp;lt;=20)$,你所要做的就是把物品装到背包里，使背包里的物品的价值总和最大。
+输入
+第一行输入一个正整数$n(1&amp;lt;=n&amp;lt;=5)$,表示有n组测试数据；随后有$n$测试数据，每组测试数据的第一行有">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -115,6 +124,8 @@
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
+                            <li><a href="/categories/ACM/">ACM练习</a></li>
+                        
                             <li><a href="/tags/">标签云</a></li>
                         
                             <li><a href="/about/">关于我</a></li>
@@ -190,6 +201,8 @@
                 
                     <li><a href="/archives/">所有文章</a></li>
                 
+                    <li><a href="/categories/ACM/">ACM练习</a></li>
+                
                     <li><a href="/tags/">标签云</a></li>
                 
                     <li><a href="/about/">关于我</a></li>
@@ -230,7 +243,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      acm
+      【C++】 背包问题
     </h1>
   
 
@@ -238,8 +251,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/ACM/">ACM</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACM/">ACM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -248,7 +269,29 @@
       
           
           
-        
+        <p><strong>描述</strong></p>
+<p>现在有很多物品（它们是可以分割的），我们知道它们每个物品的单位重量的价值$v$和重量$w(1&lt;=v,w&lt;=10)$；如果给你一个背包它能容纳的重量为$m(10&lt;=m&lt;=20)$,你所要做的就是把物品装到背包里，使背包里的物品的价值总和最大。</p>
+<p><strong>输入</strong></p>
+<p>第一行输入一个正整数$n(1&lt;=n&lt;=5)$,表示有n组测试数据；<br>随后有$n$测试数据，每组测试数据的第一行有两个正整数$s$，$m(1&lt;=s&lt;=10)$；$s$表示有$s$个物品。接下来的$s$行每行有两个正整数$v$，$w$。</p>
+<p><strong>输出</strong></p>
+<p>输出每组测试数据中背包内的物品的价值和，每次输出占一行。</p>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>1<br>3 15<br>5 10<br>2 8<br>3 9</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>65</p>
+</blockquote>
+<p><strong>题目来源</strong></p>
+<p><a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=106" target="_blank" rel="external">http://acm.nyist.net/JudgeOnline/problem.php?pid=106</a></p>
+<a id="more"></a>
+<h3 id="u7A0B_u5E8F_u5B9E_u73B0"><a href="#u7A0B_u5E8F_u5B9E_u73B0" class="headerlink" title="程序实现"></a>程序实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//结构体加上sort的cmp条件,实现了对单位价值排序时,也同时排好对应的重量。</span></span><br><span class="line"><span class="keyword">struct</span> P&#123;</span><br><span class="line">	<span class="keyword">int</span> v;<span class="comment">//单位重量的价值</span></span><br><span class="line">	<span class="keyword">int</span> w;<span class="comment">//重量</span></span><br><span class="line">&#125;*a;<span class="comment">//需要多少再申请多少</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(P x, P y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x.v&gt;y.v;<span class="comment">//按照价值降序排列</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i,n,s,m,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">while</span>(n--)&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;m;</span><br><span class="line">		a = <span class="keyword">new</span> P[s];</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;s; i++)</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a[i].v&gt;&gt;a[i].w;</span><br><span class="line">		sort(a,a+s,cmp); </span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;s; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i].w&lt;=m)&#123;</span><br><span class="line">				sum = sum + a[i].v*a[i].w;</span><br><span class="line">				m = m - a[i].w;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				sum= sum + m*a[i].v;</span><br><span class="line">				<span class="keyword">break</span>;<span class="comment">//提前结束循环</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;sum&lt;&lt;endl;</span><br><span class="line">		<span class="keyword">delete</span> a;sum = <span class="number">0</span>;<span class="comment">//释放空间</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="u6536_u83B7"><a href="#u6536_u83B7" class="headerlink" title="收获"></a>收获</h3><ol>
+<li>这是个经典的背包问题，用贪心法就可以了。</li>
+<li>也学会了用结构体加上sort的cmp条件，实现了对一组数据排序时，顺便把对应的另一组数据也排了。之前<a href="http://gcusky.com/2016/03/16/acm-7/" title="会场安排问题" target="_blank" rel="external">会场安排问题</a>还是用两组数组分别来排的Orz。</li>
+</ol>
+
       
     </div>
     
@@ -256,12 +299,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/16/acm-8/">acm</a></p>
+        <p><span>本文标题:</span><a href="/2016/03/16/acm-8/">【C++】 背包问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 GCUSKY 的个人博客">GCUSKY</a></p>
         <p><span>发布时间:</span>2016年03月16日 - 16时14分</p>
-        <p><span>最后更新:</span>2016年03月16日 - 16时14分</p>
+        <p><span>最后更新:</span>2016年03月16日 - 16时37分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/16/acm-8/" title="acm">http://www.gcusky.com/2016/03/16/acm-8/</a>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/16/acm-8/" title="【C++】 背包问题">http://www.gcusky.com/2016/03/16/acm-8/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/03/16/acm-8/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
@@ -289,7 +332,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u7A0B_u5E8F_u5B9E_u73B0"><span class="toc-number">1.</span> <span class="toc-text">程序实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6536_u83B7"><span class="toc-number">2.</span> <span class="toc-text">收获</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -353,7 +396,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/16/acm-8/" data-title="acm" data-url="http://www.gcusky.com/2016/03/16/acm-8/"></div>
+    <div class="ds-thread" data-thread-key="2016/03/16/acm-8/" data-title="【C++】 背包问题" data-url="http://www.gcusky.com/2016/03/16/acm-8/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -392,7 +435,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-8/">acm</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-7/">【C++】 会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-6/">【C++】 阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-5/">【C++】 过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-3/">【C++】 素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-4/">【C++】 蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-2/">【C++】 奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-1/">【C++】 ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/14/acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-8/">【C++】 背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-7/">【C++】 会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-6/">【C++】 阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-5/">【C++】 过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-3/">【C++】 素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-4/">【C++】 蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-2/">【C++】 奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-1/">【C++】 ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/14/acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
