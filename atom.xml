@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GCUSKY的空间]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-03-16T03:15:53.766Z</updated>
+  <updated>2016-03-16T03:21:45.909Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[acm_6]]></title>
+    <title><![CDATA[【C++】 阶乘之和]]></title>
     <link href="http://www.gcusky.com/2016/03/16/acm-6/"/>
     <id>http://www.gcusky.com/2016/03/16/acm-6/</id>
     <published>2016-03-16T03:15:30.000Z</published>
-    <updated>2016-03-16T03:15:53.766Z</updated>
+    <updated>2016-03-16T03:21:45.909Z</updated>
     <content type="html"><![CDATA[<p><strong>描述</strong></p>
 <p>给你一个非负数整数$n$，判断$n$是不是一些数（这些数不允许重复使用，且为正数）的阶乘之和，如 $9=1!+2!+3!$ ，如果是，则输出Yes，否则输出No；</p>
 <p><strong>输入</strong></p>
@@ -36,6 +36,7 @@
 </blockquote>
 <p><strong>题目来源</strong></p>
 <p><a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=91" target="_blank" rel="external">http://acm.nyist.net/JudgeOnline/problem.php?pid=91</a></p>
+<a id="more"></a>
 <h3 id="u95EE_u9898_u601D_u8DEF"><a href="#u95EE_u9898_u601D_u8DEF" class="headerlink" title="问题思路"></a>问题思路</h3><p>乍一看测试数据最大不超过1000000，好像很大的样子；其实我们把<strong>二十以内的阶乘</strong>列出：</p>
 <blockquote>
 <p>0！=1（0 的阶乘是存在的，且定为1；但题目只允许正数，待会用不上）<br>1！=1<br>2！=2<br>3！=6<br>4！=24<br>5！=120<br>6！=720<br>7！=5040<br>8！=40320<br>9！=362880<br>10！=3628800<br>11！=39916800<br>12！=479001600<br>13！=6227020800<br>14！=87178291200<br>15！=1307674368000<br>16！=20922789888000<br>17！=355687428096000<br>18！=6402373705728000<br>19！=121645100408832000<br>20！=2432902008176640000</p>
@@ -45,7 +46,21 @@
     <summary type="html">
     <![CDATA[<p><strong>描述</strong></p>
 <p>给你一个非负数整数$n$，判断$n$是不是一些数（这些数不允许重复使用，且为正数）的阶乘之和，如 $9=1!+2!+3!$ ，如果是，则输出Yes，否则输出No；</p>
-<p><strong>输入</strong></]]>
+<p><strong>输入</strong></p>
+<p>第一行有一个整数 $0&lt;m&lt;100$ ,表示有$m$组测试数据；<br>每组测试数据有一个正整数 $n&lt;1000000$ ;</p>
+<p><strong>输出</strong></p>
+<p>如果符合条件，输出Yes，否则输出No;</p>
+<p><strong>样例输入</strong></p>
+<blockquote>
+<p>2<br>9<br>10</p>
+</blockquote>
+<p><strong>样例输出</strong></p>
+<blockquote>
+<p>Yes<br>No</p>
+</blockquote>
+<p><strong>题目来源</strong></p>
+<p><a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=91">http://acm.nyist.net/JudgeOnline/problem.php?pid=91</a></p>]]>
+    
     </summary>
     
       <category term="ACM" scheme="http://www.gcusky.com/tags/ACM/"/>
@@ -57,11 +72,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[C++ 过河问题]]></title>
+    <title><![CDATA[【C++】 过河问题]]></title>
     <link href="http://www.gcusky.com/2016/03/15/acm-5/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-5/</id>
     <published>2016-03-15T12:26:19.000Z</published>
-    <updated>2016-03-16T02:25:15.595Z</updated>
+    <updated>2016-03-16T03:22:19.165Z</updated>
     <content type="html"><![CDATA[<p><strong>描述</strong></p>
 <p>在漆黑的夜里，$N$位旅行者来到了一座狭窄而且没有护栏的桥边。如果不借助手电筒的话，大家是无论如何也不敢过桥去的。不幸的是，$N$个人一共只带了一只手电筒，而桥窄得只够让两个人同时过。如果各自单独过桥的话，$N$人所需要的时间已知；而如果两人同时过桥，所需要的时间就是走得比较慢的那个人单独行动时所需的时间。问题是，如何设计一个方案，让这$N$人尽快过桥。 </p>
 <p><strong>输入</strong></p>
@@ -130,11 +145,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[C++ 素数求和问题]]></title>
+    <title><![CDATA[【C++】 素数求和问题]]></title>
     <link href="http://www.gcusky.com/2016/03/15/acm-3/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-3/</id>
     <published>2016-03-15T09:52:16.000Z</published>
-    <updated>2016-03-16T02:25:36.805Z</updated>
+    <updated>2016-03-16T03:22:03.645Z</updated>
     <content type="html"><![CDATA[<p><strong>描述</strong></p>
 <p>现在给你$N$个数$(0&lt;N&lt;1000)$，现在要求你写出一个程序，找出这$N$个数中的所有素数，并求和。</p>
 <p><strong>输入</strong></p>
@@ -187,11 +202,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[C++ 蛇形填数]]></title>
+    <title><![CDATA[【C++】 蛇形填数]]></title>
     <link href="http://www.gcusky.com/2016/03/15/acm-4/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-4/</id>
     <published>2016-03-15T08:38:03.000Z</published>
-    <updated>2016-03-16T02:27:04.554Z</updated>
+    <updated>2016-03-16T03:22:12.313Z</updated>
     <content type="html"><![CDATA[<p><strong>描述</strong></p>
 <p>在$n×n$方阵里填入$1,2,…,n×n$,要求填成蛇形。例如$n=4$时方阵为：</p>
 <p>$$<br>\begin{matrix}<br>10 &amp; 11 &amp; 12 &amp; 1 \\<br>9 &amp; 16 &amp; 13 &amp; 2 \\<br>8 &amp; 15 &amp; 14 &amp; 3 \\<br>7 &amp; 6 &amp; 5 &amp; 4 \\<br>\end{matrix}<br>$$</p>
@@ -243,11 +258,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[C++ 奇偶数分离]]></title>
+    <title><![CDATA[【C++】 奇偶数分离]]></title>
     <link href="http://www.gcusky.com/2016/03/15/acm-2/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-2/</id>
     <published>2016-03-15T08:29:58.000Z</published>
-    <updated>2016-03-16T02:32:04.993Z</updated>
+    <updated>2016-03-16T03:21:35.621Z</updated>
     <content type="html"><![CDATA[<p><strong>描述</strong></p>
 <p>有一个整型偶数$n(2&lt;= n &lt;=10000)$,你要做的是：先把$1$到$n$中的所有奇数从小到大输出，再把所有的偶数从小到大输出。</p>
 <p><strong>输入</strong></p>
@@ -304,11 +319,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[C++ ASCII码排序]]></title>
+    <title><![CDATA[【C++】 ASCII码排序]]></title>
     <link href="http://www.gcusky.com/2016/03/15/acm-1/"/>
     <id>http://www.gcusky.com/2016/03/15/acm-1/</id>
     <published>2016-03-15T08:20:48.000Z</published>
-    <updated>2016-03-16T02:28:19.126Z</updated>
+    <updated>2016-03-16T03:21:53.525Z</updated>
     <content type="html"><![CDATA[<blockquote>
 <p>以前用惯了java和php之类的编程语言，但蓝桥杯却报了C/C++组……，只能重新以此方式熟悉C++语言特性与算法了。</p>
 </blockquote>
