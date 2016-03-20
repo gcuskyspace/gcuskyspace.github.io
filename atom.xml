@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GCUSKY的空间]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-03-18T08:28:35.960Z</updated>
+  <updated>2016-03-18T08:29:57.632Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://www.gcusky.com/2016/03/18/acm-9/"/>
     <id>http://www.gcusky.com/2016/03/18/acm-9/</id>
     <published>2016-03-18T08:20:36.000Z</published>
-    <updated>2016-03-18T08:28:35.960Z</updated>
+    <updated>2016-03-18T08:29:57.632Z</updated>
     <content type="html"><![CDATA[<p>时间限制：1000 ms  |  内存限制：65535 KB  |  难度：2</p>
 <p><strong>描述</strong></p>
 <p>有一个整数n，把从1到n的数字无重复的排列成环，且使每相邻两个数（包括首尾）的和都为素数，称为素数环。<br>为了简便起见，我们规定每个素数环都从1开始。例如，下图就是6的一个素数环。</p>
@@ -58,7 +58,7 @@
 <ol>
 <li>加入了res用来标记判断1~n哪些被重复使用；</li>
 <li>数组a固定长度，且最后一个数a[n]即为第一个数a[0]，只有这两个数重复，对后续判断有利。</li>
-<li>利用位操作符可以排除奇数个数n，对解空间树再剪枝，提高效率。</li>
+<li>利用位操作符可以排除奇数个数n【因为只有奇数和偶数相加才会是素数， 所以总数为奇数的素数环，不可能存在】，对解空间树再剪枝，提高效率。</li>
 <li>活用递归搜索与res数组，才能找到所有的解。</li>
 <li>其实20以内两两相加的素数可以直接求出来，存为一串数组，效率将更高。</li>
 </ol>
