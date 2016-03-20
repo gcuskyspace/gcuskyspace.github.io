@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GCUSKY的空间]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.gcusky.com/"/>
-  <updated>2016-03-18T08:29:57.632Z</updated>
+  <updated>2016-03-20T13:43:48.647Z</updated>
   <id>http://www.gcusky.com/</id>
   
   <author>
@@ -13,6 +13,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[MySQL数据库索引问题]]></title>
+    <link href="http://www.gcusky.com/2016/03/20/mysql-index/"/>
+    <id>http://www.gcusky.com/2016/03/20/mysql-index/</id>
+    <published>2016-03-20T13:36:40.000Z</published>
+    <updated>2016-03-20T13:43:48.647Z</updated>
+    <content type="html"><![CDATA[<p>　　索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。</p>
+<h2 id="SQL__u5EFA_u7ACB_u7D22_u5F15_u7684_u539F_u5219"><a href="#SQL__u5EFA_u7ACB_u7D22_u5F15_u7684_u539F_u5219" class="headerlink" title="SQL 建立索引的原则"></a>SQL 建立索引的原则</h2><ol>
+<li>定义主键的数据列一定要建立索引。</li>
+<li>定义有外键的数据列一定要建立索引。</li>
+<li>对于经常查询的数据列最好建立索引。</li>
+<li>对于需要在指定范围内的快速或频繁查询的数据列;</li>
+<li>经常用在WHERE子句中的数据列。</li>
+<li>经常出现在关键字order by、group by、distinct后面的字段，建立索引。如果建立的是复合索引，索引的字段顺序要和这些关键字后面的字段顺序一致，否则索引不会被使用。</li>
+<li>对于那些查询中很少涉及的列，重复值比较多的列不要建立索引。</li>
+<li>对于定义为text、image和bit的数据类型的列不要建立索引。</li>
+<li>对于经常存取的列避免建立索引 </li>
+<li>限制表上的索引数目。对一个存在大量更新操作的表，所建索引的数目一般不要超过3个，最多不要超过5个。索引虽说提高了访问速度，但太多索引会影响数据的更新操作。</li>
+<li>对复合索引，按照字段在查询条件中出现的频度建立索引。在复合索引中，记录首先按照第一个字段排序。对于在第一个字段上取值相同的记录，系统再按照第二个字段的取值排序，以此类推。因此只有复合索引的第一个字段出现在查询条件中，该索引才可能被使用,因此将应用频度高的字段，放置在复合索引的前面，会使系统最大可能地使用此索引，发挥索引的作用。</li>
+</ol>
+<h2 id="u5E38_u7528_u7684_u7D22_u5F15_u65B9_u6CD5"><a href="#u5E38_u7528_u7684_u7D22_u5F15_u65B9_u6CD5" class="headerlink" title="常用的索引方法"></a>常用的索引方法</h2><h3 id="B_u6811_uFF08B-Tree__u7D22_u5F15_uFF09"><a href="#B_u6811_uFF08B-Tree__u7D22_u5F15_uFF09" class="headerlink" title="B树（B-Tree 索引）"></a>B树（B-Tree 索引）</h3><p>　　B树（B tree）是一种以树的构造管理存储位置信息的方式。在B树中每个节点（node）可以有多个子数据，从而控制树的高度。因此，即使有很多数据，也可以很快地从根部找到存放地址。<br>　　B树中除根节点外，其他节点拥有的子数据最多为 $2n$ 个，最少为 $n$ 个。</p>
+<h3 id="u6563_u5217_uFF08Hash__u7D22_u5F15_uFF09"><a href="#u6563_u5217_uFF08Hash__u7D22_u5F15_uFF09" class="headerlink" title="散列（Hash 索引）"></a>散列（Hash 索引）</h3><p>　　散列（hash）是对数据键值运用散列函数，求得存储地址的方法。散列用于”=”,”IN”和”&lt;=&gt;”这样的完全一致检索时功能强劲。但是，散列不适用比较条件检索和模糊检索。</p>
+<h2 id="MySQL__u9009_u62E9_u7D22_u5F15_u7684_u539F_u5219"><a href="#MySQL__u9009_u62E9_u7D22_u5F15_u7684_u539F_u5219" class="headerlink" title="MySQL 选择索引的原则"></a>MySQL 选择索引的原则</h2><h3 id="u9009_u62E9_u7D22_u5F15_u6570_u636E_u7C7B_u578B_u7684_u539F_u5219"><a href="#u9009_u62E9_u7D22_u5F15_u6570_u636E_u7C7B_u578B_u7684_u539F_u5219" class="headerlink" title="选择索引数据类型的原则"></a>选择索引数据类型的原则</h3><ol>
+<li>越小的数据类型通常更好：越小的数据类型通常在磁盘、内存和CPU缓存中都需要更少的空间，处理起来更快。</li>
+<li>简单的数据类型更好：整型数据比起字符，处理开销更小，因为字符串的比较更复杂。在MySQL中，应该用内置的日期和时间数据类型，而不是用字符串来存储时间；以及用整型数据类型存储IP地址。</li>
+<li>尽量避免NULL：应该指定列为NOT NULL，除非你想存储NULL。在MySQL中，含有空值的列很难进行查询优化，因为它们使得索引、索引的统计信息以及比较运算更加复杂。你应该用0、一个特殊的值或者一个空串代替空值。</li>
+</ol>
+<h3 id="u9009_u62E9_u6807_u8BC6_u7B26_u7684_u539F_u5219"><a href="#u9009_u62E9_u6807_u8BC6_u7B26_u7684_u539F_u5219" class="headerlink" title="选择标识符的原则"></a>选择标识符的原则</h3><ol>
+<li>整型：通常是作为标识符的最好选择，因为可以更快的处理，而且可以设置为AUTO_INCREMENT。</li>
+<li>字符串：尽量避免使用字符串作为标识符，它们消耗更好的空间，处理起来也较慢。而且，通常来说，字符串都是随机的，所以它们在索引中的位置也是随机的，这会导致页面分裂、随机访问磁盘，聚簇索引分裂（对于使用聚簇索引的存储引擎）。</li>
+</ol>
+<blockquote>
+<p>一旦选定数据类型，应该保证所有相关的表都使用相同的数据类型。</p>
+</blockquote>
+<h3 id="MySQL__u7D22_u5F15_u7C7B_u578B"><a href="#MySQL__u7D22_u5F15_u7C7B_u578B" class="headerlink" title="MySQL 索引类型"></a>MySQL 索引类型</h3><h4 id="u666E_u901A_u7D22_u5F15_uFF08INDEX_uFF09"><a href="#u666E_u901A_u7D22_u5F15_uFF08INDEX_uFF09" class="headerlink" title="普通索引（INDEX）"></a>普通索引（INDEX）</h4><p>　　这是最基本的索引，它没有任何限制。</p>
+<h4 id="u552F_u4E00_u7D22_u5F15_uFF08UNIQUE_uFF09"><a href="#u552F_u4E00_u7D22_u5F15_uFF08UNIQUE_uFF09" class="headerlink" title="唯一索引（UNIQUE）"></a>唯一索引（UNIQUE）</h4><p>　　它与前面的普通索引类似，不同的就是：索引列的值必须唯一，但允许有空值。如果是组合索引，则列值的组合必须唯一。</p>
+<h4 id="u4E3B_u952E_u7D22_u5F15_uFF08PRIMARY_uFF09"><a href="#u4E3B_u952E_u7D22_u5F15_uFF08PRIMARY_uFF09" class="headerlink" title="主键索引（PRIMARY）"></a>主键索引（PRIMARY）</h4><p>　　它是一种特殊的唯一索引，不允许有空值。一般是在建表的时候同时创建主键索引。</p>
+<h4 id="u5168_u6587_u7D22_u5F15_uFF08FULLTEXT_uFF09"><a href="#u5168_u6587_u7D22_u5F15_uFF08FULLTEXT_uFF09" class="headerlink" title="全文索引（FULLTEXT）"></a>全文索引（FULLTEXT）</h4><p>　　用来对大表的文本域(char，varchar，text)进行索引。</p>
+<blockquote>
+<p><strong>其他详细资料及部分引用资料</strong><br><a href="http://www.cnblogs.com/AK2012/archive/2013/01/04/2844283.html" target="_blank" rel="external">SQL索引一步到位</a><br><a href="http://www.cnblogs.com/hustcat/archive/2009/10/28/1591648.html" target="_blank" rel="external">理解MySQL——索引与优化</a><br><a href="http://www.php100.com/html/webkaifa/database/Mysql/2010/0409/4279.html" target="_blank" rel="external">MySQL索引类型一览 让MySQL高效运行起来</a><br><a href="http://www.cnblogs.com/vicenteforever/articles/1789613.html" target="_blank" rel="external">MySQL的btree索引和hash索引的区别</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>　　索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。</p>
+<h2 id="SQL__u5EFA_u7ACB_u7D22_u5F15_u7684_u539F_u5219"><]]>
+    </summary>
+    
+      <category term="mysql" scheme="http://www.gcusky.com/tags/mysql/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[【C++】 素数环]]></title>
@@ -1007,16 +1058,17 @@
   </entry>
   
   <entry>
-    <title><![CDATA[rethinking-mao]]></title>
+    <title><![CDATA[《再思毛泽东：毛泽东思想的探索》思维导图]]></title>
     <link href="http://www.gcusky.com/2015/09/22/rethinking-mao/"/>
     <id>http://www.gcusky.com/2015/09/22/rethinking-mao/</id>
     <published>2015-09-22T06:34:45.000Z</published>
-    <updated>2016-03-20T12:36:44.674Z</updated>
-    <content type="html"><![CDATA[<h3 id="u601D_u7EF4_u5BFC_u56FE"><a href="#u601D_u7EF4_u5BFC_u56FE" class="headerlink" title="思维导图"></a>思维导图</h3><p>马克思课程作业，觉得这本书理论与知识都挺有趣的，遂整理为思维导图。<br><img src="http://cloud.gcusky.com/xmind/RethinkingMao.png" alt="再思毛泽东：毛泽东思想的探索" title="再思毛泽东：毛泽东思想的探索"></p>
+    <updated>2016-03-20T13:28:08.506Z</updated>
+    <content type="html"><![CDATA[<h3 id="u601D_u7EF4_u5BFC_u56FE"><a href="#u601D_u7EF4_u5BFC_u56FE" class="headerlink" title="思维导图"></a>思维导图</h3><p>以前思政课程的作业，要读一本有关毛泽东的书。<br>觉得这本书理论与知识都挺有趣的，遂整理为思维导图。</p>
+<p><img src="http://cloud.gcusky.com/xmind/RethinkingMao.png" alt="再思毛泽东：毛泽东思想的探索" title="再思毛泽东：毛泽东思想的探索"></p>
 <h3 id="u53C2_u8003_u8D44_u6599"><a href="#u53C2_u8003_u8D44_u6599" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://item.jd.com/11546212.html" title="再思毛泽东：毛泽东思想的探索" target="_blank" rel="external">再思毛泽东：毛泽东思想的探索</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="u601D_u7EF4_u5BFC_u56FE"><a href="#u601D_u7EF4_u5BFC_u56FE" class="headerlink" title="思维导图"></a>思维导图</h3><p>马克思课程作业，觉得这本书理论与知识都挺有趣的，]]>
+    <![CDATA[<h3 id="u601D_u7EF4_u5BFC_u56FE"><a href="#u601D_u7EF4_u5BFC_u56FE" class="headerlink" title="思维导图"></a>思维导图</h3><p>以前思政课程的作业，要读一本有关毛泽东的书。<b]]>
     </summary>
     
       <category term="思维导图" scheme="http://www.gcusky.com/tags/%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/"/>
