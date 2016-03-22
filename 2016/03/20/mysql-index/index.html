@@ -6,37 +6,16 @@
   
   <title>MySQL数据库索引问题 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。
-SQL 建立索引的原则
-定义主键的数据列一定要建立索引。
-定义有外键的数据列一定要建立索引。
-对于经常查询的数据列最好建立索引。
-对于需要在指定范围内的快速或频繁查询的数据列;
-经常用在WHERE子句中的数据列。
-经常出现在关键字order by、gr">
+  <meta name="description" content="索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL数据库索引问题">
 <meta property="og:url" content="http://www.gcusky.com/2016/03/20/mysql-index/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。
-SQL 建立索引的原则
-定义主键的数据列一定要建立索引。
-定义有外键的数据列一定要建立索引。
-对于经常查询的数据列最好建立索引。
-对于需要在指定范围内的快速或频繁查询的数据列;
-经常用在WHERE子句中的数据列。
-经常出现在关键字order by、gr">
-<meta property="og:updated_time" content="2016-03-20T13:43:48.647Z">
+<meta property="og:description" content="索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。">
+<meta property="og:updated_time" content="2016-03-20T13:50:33.410Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL数据库索引问题">
-<meta name="twitter:description" content="索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。
-SQL 建立索引的原则
-定义主键的数据列一定要建立索引。
-定义有外键的数据列一定要建立索引。
-对于经常查询的数据列最好建立索引。
-对于需要在指定范围内的快速或频繁查询的数据列;
-经常用在WHERE子句中的数据列。
-经常出现在关键字order by、gr">
+<meta name="twitter:description" content="索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -162,7 +141,7 @@ SQL 建立索引的原则
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/STL练习/" style="font-size: 10px;">STL练习</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/分治法/" style="font-size: 10px;">分治法</a> <a href="/tags/回溯法/" style="font-size: 10px;">回溯法</a> <a href="/tags/思维导图/" style="font-size: 12.5px;">思维导图</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/语言入门/" style="font-size: 17.5px;">语言入门</a> <a href="/tags/读书笔记/" style="font-size: 12.5px;">读书笔记</a> <a href="/tags/贪心算法/" style="font-size: 15px;">贪心算法</a>
+                        <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/STL练习/" style="font-size: 10px;">STL练习</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/machinelearning/" style="font-size: 10px;">machinelearning</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/五十音/" style="font-size: 12.5px;">五十音</a> <a href="/tags/分治法/" style="font-size: 10px;">分治法</a> <a href="/tags/回溯法/" style="font-size: 10px;">回溯法</a> <a href="/tags/思维导图/" style="font-size: 12.5px;">思维导图</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/日语/" style="font-size: 12.5px;">日语</a> <a href="/tags/语言入门/" style="font-size: 17.5px;">语言入门</a> <a href="/tags/读书笔记/" style="font-size: 12.5px;">读书笔记</a> <a href="/tags/贪心算法/" style="font-size: 15px;">贪心算法</a>
                     </div>
                 </section>
                 
@@ -278,6 +257,7 @@ SQL 建立索引的原则
           
           
         <p>　　索引是快速搜索的关键。MySQL 索引的建立对于 MySQL 的高效运行是很重要的。下面介绍建立索引的基本知识和几种常见的 MySQL 索引类型。</p>
+<a id="more"></a>
 <h2 id="SQL__u5EFA_u7ACB_u7D22_u5F15_u7684_u539F_u5219"><a href="#SQL__u5EFA_u7ACB_u7D22_u5F15_u7684_u539F_u5219" class="headerlink" title="SQL 建立索引的原则"></a>SQL 建立索引的原则</h2><ol>
 <li>定义主键的数据列一定要建立索引。</li>
 <li>定义有外键的数据列一定要建立索引。</li>
@@ -323,7 +303,7 @@ SQL 建立索引的原则
         <p><span>本文标题:</span><a href="/2016/03/20/mysql-index/">MySQL数据库索引问题</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 GCUSKY 的个人博客">GCUSKY</a></p>
         <p><span>发布时间:</span>2016年03月20日 - 21时36分</p>
-        <p><span>最后更新:</span>2016年03月20日 - 21时43分</p>
+        <p><span>最后更新:</span>2016年03月20日 - 21时50分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/20/mysql-index/" title="MySQL数据库索引问题">http://www.gcusky.com/2016/03/20/mysql-index/</a>
             <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/03/20/mysql-index/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -338,6 +318,12 @@ SQL 建立索引的原则
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/22/jp/">
+                    【五十音】导学课
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -444,7 +430,9 @@ SQL 建立索引的原则
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/03/22/jp/" title="上一篇: 【五十音】导学课">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -456,7 +444,7 @@ SQL 建立索引的原则
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/acm-9/">【C++】 素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-8/">【C++】 背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-7/">【C++】 会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-6/">【C++】 阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-5/">【C++】 过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-3/">【C++】 素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-4/">【C++】 蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-2/">【C++】 奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-1/">【C++】 ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/14/acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/deng363/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/22/rethinking-mao/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/jp-1/">【五十音】第1回　あいうえお</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/22/jp/">【五十音】导学课</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/20/mysql-index/">MySQL数据库索引问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/18/acm-9/">【C++】 素数环</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-8/">【C++】 背包问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-7/">【C++】 会场安排问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/acm-6/">【C++】 阶乘之和</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-5/">【C++】 过河问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-3/">【C++】 素数求和问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-4/">【C++】 蛇形填数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-2/">【C++】 奇偶数分离</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/15/acm-1/">【C++】 ASCII码排序</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/14/acm/">【C++】 Fibonacci数</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/05/test-of-latex/">test-of-latex【机器学习week1-2】</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/learn-hexo/">Hexo 基本配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/11/18/deng363/">邓小平文选 第三卷 P363 思考：思维导图</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/09/22/rethinking-mao/">《再思毛泽东：毛泽东思想的探索》思维导图</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
