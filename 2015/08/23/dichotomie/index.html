@@ -4,30 +4,18 @@
   <meta charset="utf-8">
   <meta http-equiv="content-language" content="zh-CN">
   
-  <title>第1回　あいうえお | GCUSKY_SPACE</title>
+  <title>二分法求解非线性方程 | GCUSKY_SPACE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="五十音图
-五十音图五段十行，为45+45共90个（并非都是50个，因为有一些是重复的）。">
+  <meta name="description" content="在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)&amp;lt;0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第1回　あいうえお">
-<meta property="og:url" content="http://www.gcusky.com/2016/03/22/jp-1/index.html">
+<meta property="og:title" content="二分法求解非线性方程">
+<meta property="og:url" content="http://www.gcusky.com/2015/08/23/dichotomie/index.html">
 <meta property="og:site_name" content="GCUSKY_SPACE">
-<meta property="og:description" content="五十音图
-五十音图五段十行，为45+45共90个（并非都是50个，因为有一些是重复的）。">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/fifty.png">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-3.png?imageView2/0/w/450">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-4.png?imageView2/0/w/450">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-5.png?imageView2/0/w/450">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-7.png?imageView2/0/w/450">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-8.png?imageView2/0/w/450">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-6.png?imageView2/0/h/350">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-9.png?imageView2/0/h/350">
-<meta property="og:image" content="http://cloud.gcusky.com/Japanese/1-10.png?imageView2/0/h/350">
-<meta property="og:updated_time" content="2016-03-22T14:25:51.178Z">
+<meta property="og:description" content="在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)&amp;lt;0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。">
+<meta property="og:updated_time" content="2016-03-25T02:54:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第1回　あいうえお">
-<meta name="twitter:description" content="五十音图
-五十音图五段十行，为45+45共90个（并非都是50个，因为有一些是重复的）。">
+<meta name="twitter:title" content="二分法求解非线性方程">
+<meta name="twitter:description" content="在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)&amp;lt;0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。">
   
     <link rel="alternative" href="/atom.xml" title="GCUSKY_SPACE" type="application/atom+xml">
   
@@ -229,11 +217,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-jp-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-dichotomie" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/22/jp-1/" class="article-date">
-      <time datetime="2016-03-22T12:48:08.000Z" itemprop="datePublished">2016-03-22</time>
+      <a href="/2015/08/23/dichotomie/" class="article-date">
+      <time datetime="2015-08-23T11:30:56.000Z" itemprop="datePublished">2015-08-23</time>
 </a>
     </div>
   
@@ -246,7 +234,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      第1回　あいうえお
+      二分法求解非线性方程
     </h1>
   
 
@@ -255,13 +243,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/日语五十音/">日语五十音</a>
+    <a class="article-category-link" href="/categories/MATLAB/">MATLAB</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/五十音/">五十音</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/日语/">日语</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MATLAB/">MATLAB</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分法/">二分法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数值法/">数值法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/非线性方程/">非线性方程</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -272,13 +260,14 @@
       
           
           
-        <h3 id="u4E94_u5341_u97F3_u56FE"><a href="#u4E94_u5341_u97F3_u56FE" class="headerlink" title="五十音图"></a>五十音图</h3><p><img src="http://cloud.gcusky.com/Japanese/fifty.png" alt="五十音图"></p>
-<p>五十音图五段十行，为45+45共90个（并非都是50个，因为有一些是重复的）。</p>
-<a id="more"></a>
-<h2 id="u3042__u3044__u3046__u3048__u304A"><a href="#u3042__u3044__u3046__u3048__u304A" class="headerlink" title="あ　い　う　え　お"></a>あ　い　う　え　お</h2><h3 id="u57FA_u7840"><a href="#u57FA_u7840" class="headerlink" title="基础"></a>基础</h3><p><img src="http://cloud.gcusky.com/Japanese/1-3.png?imageView2/0/w/450" alt="双唇自然张开，比中文的a开口略小"> <img src="http://cloud.gcusky.com/Japanese/1-4.png?imageView2/0/w/450" alt="比发汉语的yi时双唇略松，嘴角咧开较小"> <img src="http://cloud.gcusky.com/Japanese/1-5.png?imageView2/0/w/450" alt="双唇自然微开，双唇不要向前突出，注意不要发成汉语的wu"> <img src="http://cloud.gcusky.com/Japanese/1-7.png?imageView2/0/w/450" alt="双唇向左右咧开，口型扁平，注意不要发成汉语的ei或ai"> <img src="http://cloud.gcusky.com/Japanese/1-8.png?imageView2/0/w/450" alt="双唇稍微放圆，口型大小处于あ和う之间，注意不要发成汉语的ou"></p>
-<h3 id="u5355_u8BCD"><a href="#u5355_u8BCD" class="headerlink" title="单词"></a>单词</h3><p><img src="http://cloud.gcusky.com/Japanese/1-6.png?imageView2/0/h/350" alt="あ い う"><img src="http://cloud.gcusky.com/Japanese/1-9.png?imageView2/0/h/350" alt="え お"></p>
-<h3 id="u7EC3_u4E00_u7EC3"><a href="#u7EC3_u4E00_u7EC3" class="headerlink" title="练一练"></a>练一练</h3><p><img src="http://cloud.gcusky.com/Japanese/1-10.png?imageView2/0/h/350" alt="あ い う え お"></p>
-<p><strong>建议将练一练的绕口令读熟，就差不多掌握了这五个元音</strong></p>
+        <p>　　在所有数值方法中，二分法是求解非线性方程最直观、最简单的方法。二分法是以连续函数的介值定理为基础建立的。由介值定理可知，如果函数$f(x)$在区间$[a,b]$上连续，同时$f(a)f(b)<0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。 <a="" id="more"></0$，即$f(a)$和$f(b)$符号相反，那么$f(x)$在区间$[a,b]$内一定有实根。></p>
+<h1 id="u539F_u7406"><a href="#u539F_u7406" class="headerlink" title="原理"></a>原理</h1><p>　　二分法的基本思想为：用对分区间的思路根据分点处函数$f(x)$的符号逐步将有限区间缩小使在足够小的区间内，分点与理论上的根之间距离足够小，继而用分点的值近似理论上的根。</p>
+<h1 id="u51FD_u6570ditomy-m"><a href="#u51FD_u6570ditomy-m" class="headerlink" title="函数ditomy.m"></a>函数ditomy.m</h1><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[x0,fval]</span> = <span class="title">ditomy</span><span class="params">(fun,a,b,D)</span></span></span><br><span class="line"><span class="comment">%ditomy.m函数为二分法求解非线性方程</span></span><br><span class="line">fa = feval(fun,a);    <span class="comment">%计算a点函数值</span></span><br><span class="line">fb = feval(fun,b);    <span class="comment">%计算b点函数值</span></span><br><span class="line"><span class="keyword">if</span> fa*fb &gt; <span class="number">0</span>;</span><br><span class="line">    error(<span class="string">'此方程无解'</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> nargin &lt; <span class="number">3</span>;    <span class="comment">%检查输入参数个数</span></span><br><span class="line">    error(<span class="string">'a与b将被重定义'</span>);</span><br><span class="line"><span class="keyword">elseif</span> nargin == <span class="number">3</span>;</span><br><span class="line">    D = <span class="number">1e-6</span>;    <span class="comment">%设置D的缺省值</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">if</span> fa == <span class="number">0</span>;    <span class="comment">%检查a点函数值是否为0</span></span><br><span class="line">    m = a;</span><br><span class="line">    fm = fa;</span><br><span class="line"><span class="keyword">elseif</span> fb == <span class="number">0</span>;    <span class="comment">%检查b点函数值是否为0</span></span><br><span class="line">    m = b;</span><br><span class="line">    fm = fb;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">abs</span>(b-a) &gt; D;    <span class="comment">%控制二分法结束条件</span></span><br><span class="line">        m = <span class="matrix">[a+b]</span>/<span class="number">2</span>;    <span class="comment">%二分区间端点</span></span><br><span class="line">        fm = feval(fun,m);    <span class="comment">%计算中点的函数值</span></span><br><span class="line">        <span class="keyword">if</span> fa*fm &gt; <span class="number">0</span>;    <span class="comment">%条件</span></span><br><span class="line">            a = m;    <span class="comment">%端点更新</span></span><br><span class="line">            fa = fm;    <span class="comment">%端点函数更新</span></span><br><span class="line">        <span class="keyword">elseif</span> fb*fm &gt; <span class="number">0</span>;    <span class="comment">%条件</span></span><br><span class="line">            b = m;    <span class="comment">%端点更新</span></span><br><span class="line">            fb = fm;    <span class="comment">%端点函数更新</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">x0 = m;</span><br><span class="line"><span class="keyword">if</span> nargout == <span class="number">2</span>;</span><br><span class="line">    fval = fm;    <span class="comment">%根据输出个数赋值</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h1 id="u4E3E_u4E2A_u6817_u5B50"><a href="#u4E3E_u4E2A_u6817_u5B50" class="headerlink" title="举个栗子"></a>举个栗子</h1><blockquote>
+<p>用二分法求方程$f(x)=x^3cos(x)+2x^3-2sinx$在区间$[1,3]$内的根。</p>
+</blockquote>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%非线性方程的m文件<span class="function"><span class="keyword">fun</span>.m</span></span><br><span class="line">function f = <span class="function"><span class="title">fun</span><span class="params">(x)</span></span></span><br><span class="line">f = x^<span class="number">3</span>*cos(x)+<span class="number">2</span>*x^<span class="number">2</span>-<span class="number">2</span>sin(x);</span><br><span class="line"></span><br><span class="line">%调用编写的二分函数求解非线性方程</span><br><span class="line">[x0,fval] = ditomy('<span class="function"><span class="keyword">fun</span>',1,3);</span></span><br><span class="line"></span><br><span class="line">%运行结果</span><br><span class="line">%x0 = <span class="number">2.3978</span></span><br><span class="line">%fval = -<span class="number">4.1724e-06</span></span><br></pre></td></tr></table></figure>
+<p>　　<br>参考资料<br><a href="http://item.jd.com/11544215.html" title="京东" target="_blank" rel="external">MATLABR2013a求解数学问题</a></p>
 
       
     </div>
@@ -287,13 +276,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/22/jp-1/">第1回　あいうえお</a></p>
+        <p><span>本文标题:</span><a href="/2015/08/23/dichotomie/">二分法求解非线性方程</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 GCUSKY 的个人博客">GCUSKY</a></p>
-        <p><span>发布时间:</span>2016年03月22日 - 20时48分</p>
-        <p><span>最后更新:</span>2016年03月22日 - 22时25分</p>
+        <p><span>发布时间:</span>2015年08月23日 - 19时30分</p>
+        <p><span>最后更新:</span>2016年03月25日 - 10时54分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/22/jp-1/" title="第1回　あいうえお">http://www.gcusky.com/2016/03/22/jp-1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2016/03/22/jp-1/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2015/08/23/dichotomie/" title="二分法求解非线性方程">http://www.gcusky.com/2015/08/23/dichotomie/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.gcusky.com/2015/08/23/dichotomie/　　作者: GCUSKY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -307,17 +296,11 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/22/jp-2/">
-                    第2回　かきくけこ
+                <a href="/2015/09/22/rethinking-mao/">
+                    《再思毛泽东：毛泽东思想的探索》思维导图
                 </a>
             </div>
         
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/22/jp/">
-                    【五十音】导学课
-                </a>
-            </div>
         
     </nav>
 
@@ -326,7 +309,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E94_u5341_u97F3_u56FE"><span class="toc-number">1.</span> <span class="toc-text">五十音图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u3042__u3044__u3046__u3048__u304A"><span class="toc-number"></span> <span class="toc-text">あ　い　う　え　お</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u57FA_u7840"><span class="toc-number">1.</span> <span class="toc-text">基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5355_u8BCD"><span class="toc-number">2.</span> <span class="toc-text">单词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7EC3_u4E00_u7EC3"><span class="toc-number">3.</span> <span class="toc-text">练一练</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#u539F_u7406"><span class="toc-number">1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u51FD_u6570ditomy-m"><span class="toc-number">2.</span> <span class="toc-text">函数ditomy.m</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#u4E3E_u4E2A_u6817_u5B50"><span class="toc-number">3.</span> <span class="toc-text">举个栗子</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -390,7 +373,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/22/jp-1/" data-title="第1回　あいうえお" data-url="http://www.gcusky.com/2016/03/22/jp-1/"></div>
+    <div class="ds-thread" data-thread-key="2015/08/23/dichotomie/" data-title="二分法求解非线性方程" data-url="http://www.gcusky.com/2015/08/23/dichotomie/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -417,7 +400,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/22/jp-2/" title="上一篇: 第2回　かきくけこ">
+            <a href="/2015/09/22/rethinking-mao/" title="上一篇: 《再思毛泽东：毛泽东思想的探索》思维导图">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -425,9 +408,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/22/jp/" title="下一篇: 【五十音】导学课">
-                <i class="fa fa-angle-right"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
 
